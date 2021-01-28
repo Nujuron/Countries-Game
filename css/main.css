@@ -1,0 +1,57 @@
+body {
+  font-family: Verdana,Tahoma, sans-serif;
+}
+main {
+  display: grid;
+  grid-template-areas:
+    "game game map"
+    "graf graf map";
+}
+
+#questions{
+  grid-area:game;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+#mymap{
+  grid-area:map;
+}
+#stats{
+  grid-area: graf;
+}
+.success{
+  background-color: green;
+}
+#countries,#cities{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.country-container{
+  border-radius: 10%;
+  border:2px darkblue solid;
+  width: 160px;
+  
+}
+#questions .country{
+  height: 100px;
+  width: 160px;
+  border-radius: 5%;
+  border-top:2px blue solid;
+}
+#questions .city{
+  height: 50px;
+  width: 160px;
+  border-radius: 5%;
+  border:2px blue solid;
+}
+
+#mapid {
+  height: 500px;
+  width: 500px;
+}
+
+
+/*# sourceMappingURL=main.css.map */

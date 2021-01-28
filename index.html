@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="jquery-ui-1.12.1.custom/jquery-ui.css" rel="Stylesheet" id="linkestilo" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/><!--leaflet css-->
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Document</title>
+      
+</head>
+<body>
+    <header>
+        <button id="newgame">New Game</button>
+    </header>
+    <main>
+        <section id="questions">
+            <div></div>
+            <div id="cities"></div>
+            <div id="countries"></div>
+            
+        </section>
+        <section id="mymap">
+            <div id="mapid"></div>
+        </section>
+        <section id="stats">
+            <div id="chart_div"></div>
+            <div id="curve_chart"></div>
+        </section>
+    </main>
+    
+    <template id="gameCity">
+        <div class="city" data-city="" data-country=""></div>
+    </template>
+    <template id="gameCountry">
+        <div class="country-container">
+            <h2></h2>
+            <div class="country" data-country=""></div>
+        </div>
+    </template>
+    <script src="./js/jqui-script.js" type="module"></script>
+    <script src="./js/map.js" type="module"></script>
+    
+    <script src="./jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="./jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</body>
+</html>
