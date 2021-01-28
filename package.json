@@ -1,0 +1,22 @@
+{
+  "name": "gamecountry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nujuron/Nujuron.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nujuron/Nujuron.github.io/issues"
+  },
+  "homepage": "https://github.com/Nujuron/Nujuron.github.io#readme",
+  "devDependencies": {
+    "eslint": "^7.18.0"
+  }
+}
