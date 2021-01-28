@@ -7,10 +7,13 @@ var dataPie;
 var chartPie;
 var optionsPie;
 var dataLine, chartLine, optionsLine;
+// eslint-disable-next-line no-undef
 google.charts.load('current', { 'packages': ['corechart'] });
+// eslint-disable-next-line no-undef
 google.charts.setOnLoadCallback(function () {
    //PieChart
    // Create the data table.
+   // eslint-disable-next-line no-undef
    dataPie = new google.visualization.DataTable();
    dataPie.addColumn('string', 'Country');
    dataPie.addColumn('number', 'Ocurrences');
@@ -24,10 +27,12 @@ google.charts.setOnLoadCallback(function () {
    };
 
    // Instantiate and draw our chart, passing in some options.
+   // eslint-disable-next-line no-undef
    chartPie = new google.visualization.PieChart(document.getElementById('chart_div'));
 
    chartPie.draw(dataPie, optionsPie);
    //LineChart
+   // eslint-disable-next-line no-undef
    dataLine = new google.visualization.DataTable();
    dataLine.addColumn('number', 'X');
    dataLine.addColumn('number', 'Tiempo');
@@ -37,6 +42,7 @@ google.charts.setOnLoadCallback(function () {
       legend: { position: 'bottom' }
    };
 
+   // eslint-disable-next-line no-undef
    chartLine = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
    chartLine.draw(dataLine, optionsLine);
@@ -181,6 +187,7 @@ function findLocation(countryCode, cityCode) {
    let locations = [city.location[0], city.location[1]];
    return locations;
 }
+// eslint-disable-next-line no-undef
 $("#newgame").bind('click', function (event) {
    numberMatches++;
    randomCountries = new Set();
@@ -190,19 +197,24 @@ $("#newgame").bind('click', function (event) {
    randomizePlaces(countriesInGame);
    event.target.disabled = true;
    generateGame();
+   // eslint-disable-next-line no-undef
    $(function () {
+      // eslint-disable-next-line no-undef
       $(".city").draggable({
          cursor: 'move',	  //cambiamos la punta de flecha del ratón por una cruz
          containment: '#questions', //limitamos el arrastre        
          revert: true
       });
 
+      // eslint-disable-next-line no-undef
       $(".country").droppable({
          drop: function (event, ui) { //accept (draggable)
+            // eslint-disable-next-line no-undef
             let dragItem = $(ui.draggable[0]);
             let countryCode = ui.draggable[0].dataset.country;
             let cityCode = ui.draggable[0].dataset.city;
             if (countryCode == event.target.dataset.country) {
+               // eslint-disable-next-line no-undef
                $(this).addClass("success");
                dragItem.draggable("option", "revert", false);
                dragItem.draggable("disable");
