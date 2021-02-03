@@ -1,0 +1,22 @@
+#stats{
+    display:flex;
+    flex-direction: column;
+    align-content: flex-start;
+    #curve_chart{
+      display:flex;
+      flex-direction: column;
+      width: 75%;
+    }
+}
+@media (min-width:1920px){
+  #stats{
+    display:flex;
+    flex-direction: row;
+    align-content: flex-start;
+    #curve_chart{
+      display:inline-block;
+      
+      width: 75%;
+    }
+  }
+}  

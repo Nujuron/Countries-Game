@@ -1,85 +1,59 @@
 $disabled-color:gray;
-@mixin coolassstyle($radius,$size,$color,$type,$width){
-  border-radius: $radius;
-  border: $size $color $type;
-  width: $width;
-}
-  
-@mixin mycitystyle($height,$radius,$size,$color,$type,$width){
-  @include coolassstyle($radius,$size,$color,$type,$width);
-  height: $height;
-}
-  
+$primary-color:blue;
+$light-lightgray:lighten(lightgray,10%);
+
 body{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   font-family: Verdana,Tahoma, sans-serif;
+  color:$primary-color;
+  font-weight:bold;
 }
-  
-
+h1{
+  margin: 0;
+  padding:0;
+  background-color: $light-lightgray;
+  text-align: center;
+}
+#header {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: lightblue;
+  margin: 0;
+  margin-bottom: 0.3%;
+}
 main{
-  display: grid;
-  grid-template-areas: "game game map"
-                       "graf graf map";
-}
-  
-
-#questions{
-  grid-area: game;
+  margin:0;
+  padding:0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  text-align: center;
-  .country{
-    height: 100px;
-    width: 160px;
-    border-radius: 5%;
-    border-top: 2px blue solid;
-  }
-  .city{
-    @include mycitystyle(50px,5%,2px,blue,solid,160px);
-  }
+  align-content: space-around;
+}
+@media (min-width:1920px){
+  main{
+    display: grid;
+    grid-template-areas: //"header header header"
+                        "game game map map"
+                        "graf graf graf graf";
     
-}
-#mymap{
-  grid-area:map;
-}
-
-#stats{
-  grid-area: graf;
-}
-.success{
-  background-color: green;
-}
-
-#countries,#cities{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.country-container{
-  @include coolassstyle(10%,2px,darkblue,solid,160px);
-}
-
-#mapid{
-  height: 500px;
-  width: 500px;
-}
-button{
-  border-radius: 10%;
-  border: 2px solid lightblue;
-  background-color: white;
-  &:hover{
-    background-color: lightgray;
   }
-  &:active{
-    background-color: $disabled-color;
+  #header{
+    grid-area: header;
   }
-  &:disabled{
-    background-color:lighten($disabled-color,20%);
-    color: $disabled-color;
-    border-color: $disabled-color;
+  #questions{
+    grid-area: game;
+    
+    //min-height: $first-row-grid-heigth;
+  }
+  #mymap{
+    
+    grid-area:map;
+  }
+  #stats{
+    grid-area: graf;
   }
 }
-
-
      

@@ -1,18 +1,42 @@
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
   font-family: Verdana,Tahoma, sans-serif;
+  color: blue;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  background-color: #ededed;
+  text-align: center;
+}
+
+#header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: lightblue;
+  margin: 0;
+  margin-bottom: 0.3%;
 }
 
 main {
-  display: -ms-grid;
-  display: grid;
-      grid-template-areas: "game game map" "graf graf map";
-}
-
-#questions {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: game;
+  margin: 0;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,82 +46,36 @@ main {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  text-align: center;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
 }
 
-#questions .country {
-  height: 100px;
-  width: 160px;
-  border-radius: 5%;
-  border-top: 2px blue solid;
-}
-
-#questions .city {
-  border-radius: 5%;
-  border: 2px blue solid;
-  width: 160px;
-  height: 50px;
-}
-
-#mymap {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 3;
-  grid-area: map;
-}
-
-#stats {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: graf;
-}
-
-.success {
-  background-color: green;
-}
-
-#countries, #cities {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.country-container {
-  border-radius: 10%;
-  border: 2px darkblue solid;
-  width: 160px;
-}
-
-#mapid {
-  height: 500px;
-  width: 500px;
-}
-
-button {
-  border-radius: 10%;
-  border: 2px solid lightblue;
-  background-color: white;
-}
-
-button:hover {
-  background-color: lightgray;
-}
-
-button:active {
-  background-color: gray;
-}
-
-button:disabled {
-  background-color: #b3b3b3;
-  color: gray;
-  border-color: gray;
+@media (min-width: 1920px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "game game map map" "graf graf graf graf";
+  }
+  #header {
+    grid-area: header;
+  }
+  #questions {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: game;
+  }
+  #mymap {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-area: map;
+  }
+  #stats {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-area: graf;
+  }
 }
 /*# sourceMappingURL=main.css.map */

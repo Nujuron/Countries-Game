@@ -1,0 +1,80 @@
+$disabled-color:gray;
+$primary-color:blue;
+$light-lightgray:lighten(lightgray,10%);
+
+@mixin coolassstyle($radius,$size,$color,$type,$width){
+    border-radius: $radius;
+    border: $size $color $type;
+    width: $width;
+  }
+    
+  @mixin mycitystyle($height,$radius,$size,$color,$type,$width){
+    @include coolassstyle($radius,$size,$color,$type,$width);
+    height: $height;
+  }
+#questions{
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    margin: 0;
+    padding:0;
+    .country{
+      height: 100px;
+      width: 160px;
+      border-radius: 5%;
+      border-top: 2px blue solid;
+    }
+    .city{
+      @include mycitystyle(50px,5%,2px,blue,solid,160px);
+      background-color:$light-lightgray;
+      margin: 10px;
+      
+    }
+  }
+  #countries,#cities{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    margin: 10px;
+    padding-bottom: 20px;
+    &#cities{
+      border-bottom: dashed 2px blue;
+    }
+  }
+  
+  .country-container{
+    @include coolassstyle(7%,2px,darkblue,solid,160px);
+    background-color:$light-lightgray;
+    margin: 10px;
+    div{
+      background-color: white;
+    }
+    .success{
+      background-color: green;
+    }
+  }
+  
+button{
+    font-size: 15px;
+    border-radius: 30%;
+    border: 2px solid darkblue;
+    background-color: white;
+    width: 140px;
+    height: 40px;
+    color: darkblue;
+    font-weight: bold;
+    &:hover{
+      background-color: $light-lightgray;
+    }
+    &:active{
+      background-color: $disabled-color;
+    }
+    &:disabled{
+      background-color:lighten($disabled-color,20%);
+      color: $disabled-color;
+      border-color: $disabled-color;
+    }
+  }

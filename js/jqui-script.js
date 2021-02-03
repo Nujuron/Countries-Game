@@ -249,7 +249,7 @@ $("#newgame").bind('click', function (event) {
          minute = "0" + minute;
       if (seconds < 10)
          seconds = "0" + seconds;
-      document.getElementById("questions").firstElementChild.textContent = minute + ":" + seconds;
+      document.getElementById("newgame").nextElementSibling.textContent = minute + ":" + seconds;
       var checkFinish = checkSuccess(droppables);
       if (checkFinish) {
          clearInterval(timerVar);
