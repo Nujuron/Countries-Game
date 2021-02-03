@@ -1,51 +1,79 @@
 body {
   font-family: Verdana,Tahoma, sans-serif;
 }
+
 main {
+  display: -ms-grid;
   display: grid;
-  grid-template-areas:
-    "game game map"
-    "graf graf map";
+      grid-template-areas: "game game map" "graf graf map";
 }
 
-#questions{
-  grid-area:game;
-  display:flex;
-  flex-direction: column;
-  justify-content: space-around;
+#questions {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: game;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   text-align: center;
 }
-#mymap{
-  grid-area:map;
-}
-#stats{
-  grid-area: graf;
-}
-.success{
-  background-color: green;
-}
-#countries,#cities{
-  display:flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.country-container{
-  border-radius: 10%;
-  border:2px darkblue solid;
-  width: 160px;
-  
-}
-#questions .country{
+
+#questions .country {
   height: 100px;
   width: 160px;
   border-radius: 5%;
-  border-top:2px blue solid;
+  border-top: 2px blue solid;
 }
-#questions .city{
-  height: 50px;
-  width: 160px;
+
+#questions .city {
   border-radius: 5%;
-  border:2px blue solid;
+  border: 2px blue solid;
+  width: 160px;
+  height: 50px;
+}
+
+#mymap {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: map;
+}
+
+#stats {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: graf;
+}
+
+.success {
+  background-color: green;
+}
+
+#countries, #cities {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.country-container {
+  border-radius: 10%;
+  border: 2px darkblue solid;
+  width: 160px;
 }
 
 #mapid {
@@ -53,5 +81,23 @@ main {
   width: 500px;
 }
 
+button {
+  border-radius: 10%;
+  border: 2px solid lightblue;
+  background-color: white;
+}
 
+button:hover {
+  background-color: lightgray;
+}
+
+button:active {
+  background-color: gray;
+}
+
+button:disabled {
+  background-color: #b3b3b3;
+  color: gray;
+  border-color: gray;
+}
 /*# sourceMappingURL=main.css.map */
